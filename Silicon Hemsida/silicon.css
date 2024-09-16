@@ -3,6 +3,7 @@
 
 /* Definierar globala färger och standardvärden för paddings och övergångstid */
 :root {
+    --color-border-gray: #e2e5f1;
     --color-dark: #0B0F19; /* Mörk färg används för text och bakgrund */
     --color-primary: #6366F1; /* Primär färg, använd för länkar och knappar */
     --color-gray: #9397AD; /* Grå färg för hover-effekter */
@@ -12,10 +13,10 @@
     --transition-time: all 0.2s; /* Övergångstid för animationer */
 }
 
-/* Ställer in boxmodell och tap highlight color */
+/* Ställer in boxmodell och tar bort tap highlight på mobila enheter */
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Tar bort tap highlight på mobila enheter */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* Nollställer marginaler och padding för olika element */
@@ -24,13 +25,21 @@ body, section, div, header, footer, main, aside, nav, blockquote, p, span {
     padding: 0;
 }
 
-/* Standardstilar för body */
+/* Gör body till en flex-container som sträcker sig över hela höjden */
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: "Manrope", sans-serif; /* Använder Google font */
     font-optical-sizing: auto;
     font-weight: 400; /* Normal vikt */
     font-style: normal;
     font-size: 16px; /* Standard fontstorlek */
+}
+
+/* Main tar upp all tillgänglig plats för att trycka ner footern */
+main {
+    flex: 1;
 }
 
 /* Container inställningar för layout */
@@ -183,10 +192,10 @@ header .container {
 /* Footer stil */
 footer {
     font-size: 14px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: var(--color-gray);
-    margin-top: 70rem;
+    background-color: #f5f5f5;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
 }
 
 footer .container {
@@ -194,19 +203,20 @@ footer .container {
     justify-content: center; /* Centrerar innehållet */
 }
 
+footer .copyright {
+    color: var(--color-dark);
+}
+
 footer .credit {
     display: none; /* Dölj kredit på mindre skärmar */
 }
 
-.wrapper {
-    display: grid;
-    grid-auto-rows: auto 1fr auto;
-    height: 100vh;
-}
-
-
 /* Media queries för skärmar bredare än 768px */
 @media(min-width: 768px) {
+    footer .credit {
+        display: block; /* Visa kredit på större skärmar */
+    }
+
     .container {
         max-width: 720px;
     }
@@ -228,10 +238,46 @@ footer .credit {
         display: none; /* Dölj mobilknapp på större skärmar */
     }
 
-    footer .credit {
-        display: block; /* Visa kredit på större skärmar */
+    #brands {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+
+        }
+
+        
     }
+
 }
+
+
+
+.brand-boxx {    
+    margin-top: 15px;
+}
+
+
+
+.brand-box {
+    border: 1px solid var(--color-border-gray);
+    border: 8px;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-boxx {
+    margin-top: 15px;
+}
+
 
 /* Mobilknappstil för mindre skärmar */
 .btn-mobile {
@@ -259,6 +305,24 @@ footer .credit {
     .btn-mobile {
         display: block; /* Visa mobilknapp på små skärmar */
     }
+
+    #brand-1, #brand-2 {
+        display: none;
+    }
+  
+
+    #brands {
+        display: none;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+
+        }
 
     .darkmode-container {
         justify-self: end; /* Justera mörkt läge switch till höger */
