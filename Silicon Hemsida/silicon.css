@@ -1,33 +1,39 @@
+/* Importerar Google Font Manrope */
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+/* Definierar globala färger och standardvärden för paddings och övergångstid */
 :root {
-    --color-dark: #0B0F19;
-    --color-primary: #6366F1;
-    --color-gray: #9397AD;
-    --color-white: #FFFFFF;
+    --color-dark: #0B0F19; /* Mörk färg används för text och bakgrund */
+    --color-primary: #6366F1; /* Primär färg, använd för länkar och knappar */
+    --color-gray: #9397AD; /* Grå färg för hover-effekter */
+    --color-white: #FFFFFF; /* Vit färg för text och bakgrunder */
 
-    --container-padding: 1rem;
-    --transition-time: all 0.2s;
+    --container-padding: 1rem; /* Standard padding för containers */
+    --transition-time: all 0.2s; /* Övergångstid för animationer */
 }
 
+/* Ställer in boxmodell och tap highlight color */
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Tar bort tap highlight på mobila enheter */
 }
 
+/* Nollställer marginaler och padding för olika element */
 body, section, div, header, footer, main, aside, nav, blockquote, p, span {
     margin: 0;
     padding: 0;
 }
 
+/* Standardstilar för body */
 body {
-    font-family: "Manrope", sans-serif;
+    font-family: "Manrope", sans-serif; /* Använder Google font */
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 400; /* Normal vikt */
     font-style: normal;
-    font-size: 16px;
+    font-size: 16px; /* Standard fontstorlek */
 }
 
+/* Container inställningar för layout */
 .container {
     width: 100%;
     padding-left: var(--container-padding);
@@ -36,18 +42,20 @@ body {
     margin-right: auto;
 }
 
+/* Länkstandarder */
 a {
-    color: var(--color-primary);
+    color: var(--color-primary); /* Primär färg på länkar */
     text-decoration: none;
 }
 
 a:hover {
     color: var(--color-primary);
-    text-decoration: underline;
+    text-decoration: underline; /* Understrykning vid hover */
 }
 
+/* Stil för navigationslänkar */
 .nav-link {
-    color: var(--color-dark);
+    color: var(--color-dark); /* Mörk textfärg för navigationslänkar */
     font-weight: 600;
     text-decoration: none;
 }
@@ -57,15 +65,17 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Aktiv länk stil */
 .active {
     color: var(--color-primary);
     text-decoration: underline;
 }
 
+/* Primär knappstil */
 .btn-primary {
     background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 8px;
+    color: var(--color-white); /* Vit textfärg */
+    border-radius: 8px; /* Rundade hörn */
     padding: 12px 25px;
     display: flex;
     justify-content: center;
@@ -75,15 +85,15 @@ a:hover {
 
 .btn-primary:hover {
     background-color: var(--color-gray);
-    color: var(--color-white);
-    text-decoration: none;
+    color: var(--color-white); /* Behåller vit textfärg vid hover */
 }
 
+/* Ikon stil inom primär knapp */
 .btn-primary i {
-    margin-right: 0.5rem;
+    margin-right: 0.5rem; /* Mellanrum mellan ikon och text */
 }
 
-/* The switch - the box around the slider */
+/* Switch stil - omkopplare för mörkt/ljusläge */
 .switch {
     position: relative;
     display: inline-block;
@@ -91,14 +101,14 @@ a:hover {
     height: 34px;
 }
 
-/* Hide default HTML checkbox */
+/* Gömmer den ursprungliga checkboxen */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The slider */
+/* Slider stil */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -106,11 +116,11 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    background-color: #ccc; /* Standard bakgrundsfärg */
+    transition: .4s; /* Smooth transition */
 }
 
+/* Slider-boll som rör sig */
 .slider:before {
     position: absolute;
     content: "";
@@ -119,10 +129,10 @@ a:hover {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    -webkit-transition: .4s;
     transition: .4s;
 }
 
+/* Färgändring när checkboxen är ikryssad */
 input:checked + .slider {
     background-color: #2196F3;
 }
@@ -132,12 +142,10 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(26px); /* Flyttar bollen när aktiv */
 }
 
-
+/* Rundade kanter på switchen */
 .slider.round {
     border-radius: 34px;
 }
@@ -146,29 +154,23 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* Stil för container för mörkt/ljusläge */
 .darkmode-container {
     display: flex;
     align-items: center;
 }
 
 .darkmode-container .label {
-    margin-right: 10px;
+    margin-right: 10px; /* Mellanrum mellan label och switch */
+    display: none; /* Dölj label på mindre skärmar */
 }
 
-.darkmode-container .label {
+/* Dölj navbar och inloggningsknapp som standard */
+.navbar, #auth-signin {
     display: none;
 }
 
-
-.navbar {
-    display: none;
-}
-
-#auth-signin {
-    display: none;
-}
-
-
+/* Layout för header */
 header .container {
     display: grid;
     align-items: center;
@@ -178,14 +180,39 @@ header .container {
     padding-bottom: 1rem;
 }
 
+/* Footer stil */
+footer {
+    font-size: 14px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: var(--color-gray);
+    margin-top: 70rem;
+}
 
+footer .container {
+    display: flex;
+    justify-content: center; /* Centrerar innehållet */
+}
+
+footer .credit {
+    display: none; /* Dölj kredit på mindre skärmar */
+}
+
+.wrapper {
+    display: grid;
+    grid-auto-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+
+/* Media queries för skärmar bredare än 768px */
 @media(min-width: 768px) {
     .container {
         max-width: 720px;
     }
 
     .darkmode-container .label {
-        display: block;
+        display: block; /* Visa label på större skärmar */
     }
 
     header .container {
@@ -193,20 +220,20 @@ header .container {
         grid-template-columns: auto 1fr auto auto;
     }
 
-    .navbar {
-        display: block;
-    }
-
-    #auth-signin {
-        display: block; 
+    .navbar, #auth-signin {
+        display: block; /* Visa navbar och auth sign in på större skärmar */
     }
 
     .btn-mobile {
-        display: none; 
+        display: none; /* Dölj mobilknapp på större skärmar */
+    }
+
+    footer .credit {
+        display: block; /* Visa kredit på större skärmar */
     }
 }
 
-
+/* Mobilknappstil för mindre skärmar */
 .btn-mobile {
     background-color: transparent;
     border: none;
@@ -216,28 +243,24 @@ header .container {
     cursor: pointer;
 }
 
-
+/* Media queries för skärmar bredare än 1400px */
 @media(min-width: 1400px) {
     .container {
         max-width: 1320px;
     }
 }
 
-
+/* Media queries för skärmar mindre än 767px */
 @media(max-width: 767px) {
-    #auth-signin {
-        display: none; 
-    }
-
-    .navbar {
-        display: none; 
+    #auth-signin, .navbar {
+        display: none; /* Dölj navbar och auth sign in på små skärmar */
     }
 
     .btn-mobile {
-        display: block; 
+        display: block; /* Visa mobilknapp på små skärmar */
     }
 
     .darkmode-container {
-        justify-self: end
+        justify-self: end; /* Justera mörkt läge switch till höger */
     }
 }
