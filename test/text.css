@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary: teal
+}
+
+body {
+    background-color: var(--clr-primary);
+    font-family: Arial, Helvetica, sans-serif;    
+}
+.wrapper {
+    padding-inline: 1rem;
+    margin: 0 auto;
+}
+
+.center-screen {
+    display: grid;
+    place-items: center;
+    height: 100svh;
+}
+
+
+.card {
+    background-color: aliceblue;
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 7px black;
+    width: 100%;
+    max-width: 900px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: .3rem;
+}
+
+
+.form-input {
+    width: 100%;
+    padding: .6rem;
+    font-size: 1rem;
+    border-radius: .5em;
+    border: 1px solid grey;
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 5px var(--clr-primary);
+    }
+}
+
+.row {
+    display: grid;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > * {
+        width: 100%;
+    }
+}
+
+
+.email-full-width {
+    grid-column: span 2;
+}
+
+
+.form-check {
+
+    display: flex;
+    gap: .5rem;
+
+    input[type="checkbox"] {
+        accent-color: var(--clr-primary);
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+
+.btn {
+    padding: .6em 2em;
+    font-size: 1rem;
+    border-radius: .5em;
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: backround 200ms ease;
+}
+.btn-primary {
+    background-color: var(--clr-primary);
+    color: aliceblue;
+
+    &:hover,
+    &:focus-visible {
+        background-color: blue
+    }
+
+    &:active {
+        background-color: aqua;
+    }
+}
+
+
+
+
+
+
+
+@media (width > 600px) {
+    .row {
+        grid-template-columns: 1fr 1fr;
+    }
+}
