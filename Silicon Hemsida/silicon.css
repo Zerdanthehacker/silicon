@@ -8,7 +8,7 @@
     --color-primary: #6366F1; /* Primär färg, använd för länkar och knappar */
     --color-gray: #9397AD; /* Grå färg för hover-effekter */
     --color-white: #FFFFFF; /* Vit färg för text och bakgrunder */
-    --color-Gray-1: #f3f6ff; 
+    --color-Gray-1: #E2E5F1; 
 
     --container-padding: 1rem; /* Standard padding för containers */
     --transition-time: all 0.2s; /* Övergångstid för animationer */
@@ -520,11 +520,6 @@ background: linear-gradient(0deg, rgb(230, 230, 236) 0%, rgba(99,102,241,0.10407
 }
 
 
-    @media (min-width: 768px) {
-        padding-bottom: 0;
-
-    }
-
     
     .container {
 
@@ -697,8 +692,17 @@ background: linear-gradient(0deg, rgb(230, 230, 236) 0%, rgba(99,102,241,0.10407
 
 
     .mobile-features {
-        margin-left: 30rem;
+        margin-left: 40rem;
         padding-top: 80px;
+    }
+
+
+  
+
+    
+
+    .transactions {
+        background-color: var(--color-Gray-1);
     }
 
 
@@ -776,6 +780,7 @@ background: linear-gradient(0deg, rgb(230, 230, 236) 0%, rgba(99,102,241,0.10407
 
 
 
+
     .simple-transfer {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -814,6 +819,258 @@ background: linear-gradient(0deg, rgb(230, 230, 236) 0%, rgba(99,102,241,0.10407
     .reciever p {
         margin-top: 15px;
     }
+
+
+    .review-container {
+        margin-left: 35rem;
+        display: flex;
+        gap: 5rem;
+
+    }
+
+
+
+    .review {
+        padding-top: 5rem;
+        background-color: var(--color-Gray-1);
+        padding-bottom: 5rem;
+    }
+
+
+    .review-header {
+        font-size: x-large;
+    }
+
+    
+
+
+    .box {
+        display: flex;
+        gap: 3rem;
+        margin-top: 2rem;
+    }
+
+    .question-box p {
+        padding-bottom: 30px
+    }
+
+
+    .question-box-2 p {
+        padding-bottom: 30px
+    }
+    
+    .question-box img {
+        padding-bottom: 30px;
+    }
+    .question-box-2 img {
+        padding-bottom: 30px;
+    }
+
+
+    .question-box, .question-box-2  {
+        border: 1px solid var(--color-Gray-1);
+        border-radius: 0.5rem;
+    }
+
+
+    .question-box {
+        button {
+            color: var(--color-primary);
+        }
+    }
+    .question-box-2 {
+        button {
+            color: #22c55e;
+        }
+    }
+    
+
+
+
+    .questions {
+        padding-top: 5rem;
+        padding-left: 5rem;
+    }
+
+
+    .box {
+        button {
+            border: none;
+            background-color: white;
+            padding-left: 20px;
+            padding-bottom: 15px;
+        }
+
+        img {
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+
+        p {
+            padding: 20px;
+        }
+    }
+
+
+    .faq {
+        
+
+        h2 {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: xx-large;
+        }
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: var(--color-gray);
+        }
+    }
+
+
+
+    .faq-box {
+        margin: 3rem;
+        margin-left: 65rem;
+        border: 1px solid var(--color-Gray-1);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        border-radius: 0.5rem;
+
+        h3 {
+            margin: 15px;
+            margin-top: -5px;
+        }
+
+        p {
+            margin: 15px;
+        }
+
+    }
+
+
+
+    .faq-box {
+
+        img {
+            padding-top: 10px;
+        }
+    }
+
+
+    .FAQ {
+        margin-top: -500px;
+        margin-right: 5rem;
+        
+
+        h3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            margin-right: 1.5rem;
+        }
+
+    }
+
+    .faq-3 {
+
+        img {
+            margin-left: 2rem;
+        }
+
+    }
+
+
+    
+    .wrapper {
+        height: 100svh;
+        display: grid;
+        place-items: center;
+    }
+
+    .btn {
+        background-color: var(--color-primary);
+        color: white;
+        padding: .8em 2em;
+        border: 0;
+        font-size: 1rem;
+
+        border-radius: .5em;
+    }
+
+    .form-input {
+        border: 1px solid #747474;
+        font-size: 1rem;
+        padding: .3em;
+
+        border-radius: .5em;
+    }
+
+    .input-group {
+        display: flex;
+
+        .form-input {
+            border-radius: .5em 0 0 .5em;
+        }
+
+        .btn {
+            border-radius: 0 .5em .5em 0;
+        }
+    }
+
+    .input-group {
+        position: relative;
+        margin-right: 7rem;
+    }
+
+    .icon {
+        position: absolute;
+        top: 50%;
+        left: .5rem;
+
+        transform: translateY(-50%);
+    }
+
+    .form-input {
+        padding-left: 2rem;
+    }
+
+    .wrapper {
+        display: flex;
+        place-items: center;
+        background-color: var(--color-Gray-1);
+        border: 1px solid var(--color-Gray-1); 
+        padding: 1rem; 
+        gap: 20rem;
+        border-radius: .5em; 
+        height: auto; 
+        width: fit-content; 
+        margin: 0 auto;
+    }
+    
+
+    .bell {
+        display: flex;
+        gap: 2rem;
+    }
+
+
+    .brands {
+        margin-top: 2rem;
+    }
+
+    .brand-box-6 {
+        margin-top: 15px;
+    }
+  
+
+    
+
+
+
+    
+
 
 
 
